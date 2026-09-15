@@ -1,0 +1,699 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wanderly | Travel & Explore</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-compass"></i>
+            <span>Wanderly</span>
+        </div>
+
+        <nav id="navMenu">
+            <a href="#home">Home</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#experiences">Experiences</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="menu-btn" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <button class="nav-book-btn" onclick="openBooking()">
+            <i class="fa-solid fa-paper-plane"></i>
+            Plan a Trip
+        </button>
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <p class="hero-small">
+                <i class="fa-solid fa-location-dot"></i>
+                Discover the world
+            </p>
+
+            <h1>
+                Explore the World.<br>
+                <span>Create Memories.</span>
+            </h1>
+
+            <p class="hero-text">
+                Discover beautiful destinations, unforgettable experiences,
+                and amazing places waiting for you.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#destinations" class="primary-btn">
+                    Explore Destinations
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <button class="outline-btn" onclick="openBooking()">
+                    Plan Your Trip
+                </button>
+            </div>
+        </div>
+
+        <!-- Search Box -->
+        <div class="search-box">
+            <div class="search-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                    <small>Where</small>
+                    <input type="text" id="searchInput"
+                        placeholder="Search destination...">
+                </div>
+            </div>
+
+            <div class="search-item">
+                <i class="fa-solid fa-calendar-days"></i>
+                <div>
+                    <small>When</small>
+                    <input type="date" id="travelDate">
+                </div>
+            </div>
+
+            <button class="search-btn" onclick="searchDestination()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Search
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- ================= DESTINATIONS ================= -->
+    <section class="section" id="destinations">
+
+        <div class="section-heading">
+            <p>TRAVEL INSPIRATION</p>
+            <h2>Popular Destinations</h2>
+            <span>
+                Explore some of the world's most beautiful places.
+            </span>
+        </div>
+
+        <!-- Filters -->
+        <div class="filter-buttons">
+            <button class="filter active" onclick="filterDestinations('all', this)">
+                All
+            </button>
+
+            <button class="filter" onclick="filterDestinations('India', this)">
+                India
+            </button>
+
+            <button class="filter" onclick="filterDestinations('Asia', this)">
+                Asia
+            </button>
+
+            <button class="filter" onclick="filterDestinations('Europe', this)">
+                Europe
+            </button>
+
+            <button class="filter" onclick="filterDestinations('Beach', this)">
+                Beaches
+            </button>
+        </div>
+
+        <div class="destination-grid" id="destinationGrid">
+
+            <!-- Card 1 -->
+            <article class="destination-card"
+                data-category="India"
+                data-name="Manali">
+
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=900&q=80"
+                        alt="Manali">
+
+                    <span class="location-tag">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Himachal Pradesh
+                    </span>
+                </div>
+
+                <div class="card-content">
+                    <div class="card-title">
+                        <h3>Manali</h3>
+                        <span>₹15,000</span>
+                    </div>
+
+                    <p>
+                        Mountains, valleys, adventure and peaceful landscapes.
+                    </p>
+
+                    <div class="card-bottom">
+                        <span>
+                            <i class="fa-solid fa-star"></i> 4.8
+                        </span>
+
+                        <button onclick="showDetails('Manali')">
+                            Explore
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- Card 2 -->
+            <article class="destination-card"
+                data-category="India"
+                data-name="Goa">
+
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=80"
+                        alt="Goa">
+
+                    <span class="location-tag">
+                        <i class="fa-solid fa-location-dot"></i>
+                        India
+                    </span>
+                </div>
+
+                <div class="card-content">
+                    <div class="card-title">
+                        <h3>Goa</h3>
+                        <span>₹12,000</span>
+                    </div>
+
+                    <p>
+                        Relax on beautiful beaches and enjoy vibrant nightlife.
+                    </p>
+
+                    <div class="card-bottom">
+                        <span>
+                            <i class="fa-solid fa-star"></i> 4.7
+                        </span>
+
+                        <button onclick="showDetails('Goa')">
+                            Explore
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- Card 3 -->
+            <article class="destination-card"
+                data-category="Asia"
+                data-name="Bali">
+
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=80"
+                        alt="Bali">
+
+                    <span class="location-tag">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Indonesia
+                    </span>
+                </div>
+
+                <div class="card-content">
+                    <div class="card-title">
+                        <h3>Bali</h3>
+                        <span>₹35,000</span>
+                    </div>
+
+                    <p>
+                        Tropical beaches, temples, culture and stunning sunsets.
+                    </p>
+
+                    <div class="card-bottom">
+                        <span>
+                            <i class="fa-solid fa-star"></i> 4.9
+                        </span>
+
+                        <button onclick="showDetails('Bali')">
+                            Explore
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- Card 4 -->
+            <article class="destination-card"
+                data-category="Europe"
+                data-name="Paris">
+
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=80"
+                        alt="Paris">
+
+                    <span class="location-tag">
+                        <i class="fa-solid fa-location-dot"></i>
+                        France
+                    </span>
+                </div>
+
+                <div class="card-content">
+                    <div class="card-title">
+                        <h3>Paris</h3>
+                        <span>₹70,000</span>
+                    </div>
+
+                    <p>
+                        Experience art, fashion, romance and iconic landmarks.
+                    </p>
+
+                    <div class="card-bottom">
+                        <span>
+                            <i class="fa-solid fa-star"></i> 4.8
+                        </span>
+
+                        <button onclick="showDetails('Paris')">
+                            Explore
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- Card 5 -->
+            <article class="destination-card"
+                data-category="Beach"
+                data-name="Maldives">
+
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=900&q=80"
+                        alt="Maldives">
+
+                    <span class="location-tag">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Maldives
+                    </span>
+                </div>
+
+                <div class="card-content">
+                    <div class="card-title">
+                        <h3>Maldives</h3>
+                        <span>₹55,000</span>
+                    </div>
+
+                    <p>
+                        Crystal-clear water, luxury resorts and tropical islands.
+                    </p>
+
+                    <div class="card-bottom">
+                        <span>
+                            <i class="fa-solid fa-star"></i> 4.9
+                        </span>
+
+                        <button onclick="showDetails('Maldives')">
+                            Explore
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- Card 6 -->
+            <article class="destination-card"
+                data-category="Asia"
+                data-name="Dubai">
+
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80"
+                        alt="Dubai">
+
+                    <span class="location-tag">
+                        <i class="fa-solid fa-location-dot"></i>
+                        UAE
+                    </span>
+                </div>
+
+                <div class="card-content">
+                    <div class="card-title">
+                        <h3>Dubai</h3>
+                        <span>₹45,000</span>
+                    </div>
+
+                    <p>
+                        Luxury shopping, desert adventures and futuristic architecture.
+                    </p>
+
+                    <div class="card-bottom">
+                        <span>
+                            <i class="fa-solid fa-star"></i> 4.8
+                        </span>
+
+                        <button onclick="showDetails('Dubai')">
+                            Explore
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- ================= EXPERIENCES ================= -->
+    <section class="experience-section" id="experiences">
+
+        <div class="section-heading light">
+            <p>MAKE IT SPECIAL</p>
+            <h2>Travel Experiences</h2>
+            <span>
+                Choose an experience and make your journey unforgettable.
+            </span>
+        </div>
+
+        <div class="experience-grid">
+
+            <div class="experience-card">
+                <i class="fa-solid fa-mountain-sun"></i>
+                <h3>Adventure</h3>
+                <p>
+                    Trekking, camping, rafting and exciting outdoor activities.
+                </p>
+            </div>
+
+            <div class="experience-card">
+                <i class="fa-solid fa-umbrella-beach"></i>
+                <h3>Beach Escape</h3>
+                <p>
+                    Relax beside the ocean and enjoy beautiful tropical beaches.
+                </p>
+            </div>
+
+            <div class="experience-card">
+                <i class="fa-solid fa-utensils"></i>
+                <h3>Food & Culture</h3>
+                <p>
+                    Discover local food, traditions and authentic cultures.
+                </p>
+            </div>
+
+            <div class="experience-card">
+                <i class="fa-solid fa-camera"></i>
+                <h3>Photography</h3>
+                <p>
+                    Capture beautiful places and unforgettable travel moments.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+    <section class="about-section" id="about">
+
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1000&q=80"
+                alt="Travel">
+        </div>
+
+        <div class="about-content">
+            <p class="section-label">ABOUT WANDERLY</p>
+
+            <h2>
+                Your Journey Begins With A Single Step
+            </h2>
+
+            <p>
+                Wanderly is a modern travel platform designed to help
+                travelers discover amazing destinations and plan memorable
+                journeys.
+            </p>
+
+            <div class="about-stats">
+
+                <div>
+                    <strong>50+</strong>
+                    <span>Destinations</span>
+                </div>
+
+                <div>
+                    <strong>10K+</strong>
+                    <span>Travelers</span>
+                </div>
+
+                <div>
+                    <strong>4.9</strong>
+                    <span>Average Rating</span>
+                </div>
+
+            </div>
+
+            <button class="primary-btn" onclick="openBooking()">
+                Start Exploring
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+    <section class="cta-section">
+
+        <div>
+            <p>READY FOR YOUR NEXT ADVENTURE?</p>
+
+            <h2>
+                The world is waiting for you.
+            </h2>
+
+            <span>
+                Pack your bags and start exploring today.
+            </span>
+        </div>
+
+        <button class="white-btn" onclick="openBooking()">
+            Plan My Trip
+            <i class="fa-solid fa-paper-plane"></i>
+        </button>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="contact">
+
+        <div class="footer-content">
+
+            <div class="footer-about">
+                <div class="logo">
+                    <i class="fa-solid fa-compass"></i>
+                    <span>Wanderly</span>
+                </div>
+
+                <p>
+                    Discover beautiful places, create unforgettable memories,
+                    and travel beyond boundaries.
+                </p>
+
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Explore</h3>
+                <a href="#destinations">Destinations</a>
+                <a href="#experiences">Experiences</a>
+                <a href="#about">About Us</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Support</h3>
+                <a href="#">Help Center</a>
+                <a href="#">Travel Guide</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Contact</h3>
+                <a href="mailto:hello@wanderly.com">
+                    hello@wanderly.com
+                </a>
+                <a href="tel:+919876543210">
+                    +91 98765 43210
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Wanderly Travel. All Rights Reserved.</p>
+
+            <p>
+                Made with <i class="fa-solid fa-heart"></i> for travelers
+            </p>
+        </div>
+
+    </footer>
+
+
+    <!-- ================= DETAILS MODAL ================= -->
+    <div class="modal" id="detailsModal">
+
+        <div class="modal-box">
+
+            <button class="close-btn" onclick="closeModal('detailsModal')">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-image">
+                <img id="modalImage" src="" alt="Destination">
+            </div>
+
+            <div class="modal-content">
+                <p class="section-label">DESTINATION GUIDE</p>
+                <h2 id="modalTitle">Destination</h2>
+
+                <p id="modalDescription"></p>
+
+                <div class="modal-info">
+                    <span>
+                        <i class="fa-solid fa-star"></i>
+                        <b id="modalRating"></b>
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                        <b id="modalPrice"></b>
+                    </span>
+                </div>
+
+                <button class="primary-btn" onclick="openBooking(); closeModal('detailsModal')">
+                    Book This Destination
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ================= BOOKING MODAL ================= -->
+    <div class="modal" id="bookingModal">
+
+        <div class="booking-box">
+
+            <button class="close-btn" onclick="closeModal('bookingModal')">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="booking-header">
+                <i class="fa-solid fa-plane-departure"></i>
+                <h2>Plan Your Trip</h2>
+                <p>Tell us about your dream destination.</p>
+            </div>
+
+            <form id="bookingForm" onsubmit="submitBooking(event)">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" id="name"
+                            placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="email"
+                            placeholder="Enter your email" required>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label>Destination</label>
+
+                        <select id="destination" required>
+                            <option value="">Select destination</option>
+                            <option>Manali</option>
+                            <option>Goa</option>
+                            <option>Bali</option>
+                            <option>Paris</option>
+                            <option>Maldives</option>
+                            <option>Dubai</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Travel Date</label>
+                        <input type="date" id="bookingDate" required>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Number of Travelers</label>
+
+                    <input type="number" id="travelers"
+                        min="1" max="20"
+                        placeholder="Number of travelers" required>
+                </div>
+
+                <button type="submit" class="primary-btn full-btn">
+                    Send Travel Request
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+
+    <!-- ================= TOAST ================= -->
+    <div class="toast" id="toast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMessage">Success!</span>
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```
